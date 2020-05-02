@@ -6,4 +6,5 @@ const botSettings = {
     "commandPrefix": "Insert your Discord bot's command prefix here!"
 };
 
+//Export privateSettings object so we can access it when requiring this module.
 exports = botSettings;

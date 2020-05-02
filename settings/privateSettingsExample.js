@@ -10,4 +10,5 @@ const privateSettings = {
     "token": "Insert your discord bot's token here!"
 }
 
+//Export privateSettings object so we can access it when requiring this module.
 exports = privateSettings;
