@@ -14,15 +14,15 @@ Installing this project is simple, all you need to do is download this project a
 
 Once you've extracted all the files to your chosen directory, follow this list of directives:
 
-• Install the "discord.js" node module to the directory you've extracted DiscordJarvis to.
-• Retrieve your Discord bot's token and place it inside the "privateSettings.js" file.
+- Install the "discord.js" node module to the directory you've extracted DiscordJarvis to.
+- Retrieve your Discord bot's token and place it inside the "privateSettings.js" file.
 
 If you want an example of how to perform these actions, direct your attention to the (Installation Tutorial) section.
 
 # Installation Tutorial
 
--> Insert video/gif for installing node modules.
--> Insert video/gif for retrieving your discord bot's token.s
+- -> Insert video/gif for installing node modules.
+- -> Insert video/gif for retrieving your discord bot's token.s
 
 ## Contributing
 
