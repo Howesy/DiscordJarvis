@@ -2,6 +2,10 @@
 
 Discord Jarvis is a easy deployable framework for a discord bot, taking advantage of modularly structured commands and events for organisation and cleanliness. Taking inspiration from the fictional artifical super-intelligence "Jarvis", this structure allows you to perform advanced functions while remaining simplistic for users to command.
 
+All code contained within is fully commented so you can understand the inner workings of everything that is occuring.
+Obviously I can't explain everything in-depth otherwise the files would be a million lines long each.
+So you'll have to do some research to figure out specific stuff yourself, but there is documentation and knowledge everywhere.
+
 # Dependencies
 
 This repository is dependant on these node modules:
