@@ -13,6 +13,12 @@ bot.commands = new discord.Collection();
 bot.aliases = new discord.Collection();
 //Assign our JSON settings file to a property prototype on the "bot" variable, so we can easily access our settings on the go.
 bot.settings = require(`${settingsDir}settings.js`);
+bot.privateSettings = require(`${settingsDir}privateSettings.js`);
+
+//Deconstruct our private settings object and retrieve the token property because that's all we need.
+const {token} = bot.privateSettings;
+//Login into the discord bot using our token so we can bring our bot online to command it.
+bot.login(token);
 
 //Read the events directory, require the event file and initialize it with our bot variable to start listening to that event.
 fs.readdir(eventsDir, function(error, events) {
