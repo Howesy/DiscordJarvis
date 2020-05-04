@@ -22,6 +22,10 @@ bot.login(token);
 
 //Read the events directory, require the event file and initialize it with our bot variable to start listening to that event.
 fs.readdir(eventsDir, function(error, events) {
+    //Declare a variable to store the current time in milliseconds, so we can use it for performance statistics.
+    const initialTime = Date.now();
+    //Log to the console that we're beginning the loading and initialization of discord events.
+    console.log("[Discord Jarvis] Beginning loading and initialization of discord events!");
     events.forEach(function(event) {
         if (!event.endsWith(".js"))
             return;
@@ -30,6 +34,8 @@ fs.readdir(eventsDir, function(error, events) {
         console.log(`DiscordJarvis | Event Allocated => ${eventName}`);
         bot.on(eventName, (...constructs) => eventModule.run(bot, ...constructs));
     });
+    //Log how long it took to load all our events for statistical purposes, and to look cool.
+    console.log(`[Discord Jarvis] Took ${Date.now() - initialTime}ms to load all events.`);
 });
 
 //Call the "ReadCommands" function to read the various command directories that we have.
