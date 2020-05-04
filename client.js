@@ -40,6 +40,8 @@ fs.readdir(eventsDir, function(error, events) {
 
 //Call the "ReadCommands" function to read the various command directories that we have.
 //We segregate commands dependant on category so we can view them easier later in our help command.
+//Log to console that we're beginning the loading and initialization of discord commands.
+console.log("[Discord Jarvis] Beginning loading and initialization of discord commands!");
 ReadCommands(userCommandsDir);
 ReadCommands(developerCommandsDir);
 
