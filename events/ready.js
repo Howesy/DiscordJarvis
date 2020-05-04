@@ -9,7 +9,7 @@ in this instance.
 /**
  * Method for running exported module.
  * @param {object} bot This is our bot (Client) variable.
- */
+*/
 
 //Declaring a function "run", and exporting it.
 exports.run = function(bot) {
