@@ -14,7 +14,7 @@ Through each event file or "module", as I'll be calling them we pass bot and any
 exports.run = function(bot, error) {
     //Deconstructing the passed error object and retrieving the properties that we desire instead of calling them individually like: "error.message"
     const {name, message, lineNumber, fileName, stack} = error;
-    //Declare an array to store various pieces of information, and allow for deconstruction if we so desire.
+    //Declare an array to store various pieces of information, and to allow for deconstruction if we so desire.
     const constructedMessage = [];
     //Add which will file the error has occured in and at which line into our "constructedMessage" array.
     constructedMessage.push(`Discord Jarvis encountered an error in ${fileName} at line ${lineNumber}\n`);
