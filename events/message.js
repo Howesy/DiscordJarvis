@@ -2,8 +2,6 @@
 When initializing an event, we call a method "run" with the parameters (bot, ...constructs).
 Essentially, if we simplify this down. All we're doing is reading a function from a file and using it as our function for event.
 Through each event file or "module", as I'll be calling them we pass bot and any other parameters we'll be using for the event.
-Since this is the "ready" event and as specified by the discord.js documentation there are no other parameters, we can just pass bot
-in this instance.
 */
 
 /**
