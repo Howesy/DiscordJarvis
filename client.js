@@ -25,7 +25,7 @@ fs.readdir(eventsDir, function(error, events) {
     events.forEach(function(event) {
         if (!event.endsWith(".js"))
             return;
-        const eventModule = require(`${eventsDirectory}${event}`);
+        const eventModule = require(`${eventsDir}${event}`);
         const [eventName] = event.split(".");
         console.log(`DiscordJarvis | Event Allocated => ${eventName}`);
         bot.on(eventName, (...constructs) => eventModule.run(bot, ...constructs));
