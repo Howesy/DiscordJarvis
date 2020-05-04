@@ -59,9 +59,7 @@ function ReadCommands(commandDirectory) {
             const commandName = commandFile.info.name;
             bot.commands.set(commandName, commandFile);
             console.log(`DiscordJarvis | Command Allocated => ${commandName}`);
-            commandFile.configuration.aliases.forEach(function(alias) {
-                bot.aliases.set(alias, commandName);
-            });
+            commandFile.configuration.aliases.forEach(alias => bot.aliases.set(alias, commandName));
         });
     });
 }
