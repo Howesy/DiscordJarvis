@@ -7,4 +7,4 @@ const botSettings = {
 };
 
 //Export privateSettings object so we can access it when requiring this module.
-exports = botSettings;
+module.exports = botSettings;
