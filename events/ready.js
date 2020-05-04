@@ -14,7 +14,7 @@ in this instance.
 //Declaring a function "run", and exporting it.
 exports.run = function(bot) {
     //We're deconstructing the bot object and reading the guilds property only as we don't need the entire object.
-    const {guilds} = bot;
+    const {cache} = bot.guilds;
     //Console logging how many guilds the bot is located in, and that the bot is ready to be commanded.
-    console.log(`Hello sir, I have ${guilds.size} at my disposal and I'm ready at your command.`);
+    console.log(`Hello sir, I have ${cache.size} guild(s) at my disposal and I'm ready at your command.`);
 }
