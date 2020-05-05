@@ -29,7 +29,7 @@ fs.readdir(eventsDir, function(error, events) {
     events.forEach(function(event) {
         if (!event.endsWith(".js"))
             return;
-        const eventModule = require(`${eventsDir}${event}`);
+        const eventModule = require(eventsDir + event);
         const [eventName] = event.split(".");
         console.log(`DiscordJarvis | Event Allocated => ${eventName}`);
         bot.on(eventName, (...constructs) => eventModule.run(bot, ...constructs));
@@ -63,7 +63,7 @@ function ReadCommands(commandDirectory) {
         commands.forEach(function(command) {
             if (!command.endsWith(".js")) 
                 return;
-            const commandFile = require(`${commandDirectory}${command}`);
+            const commandFile = require(commandDirectory + command);
             const commandName = commandFile.info.name;
             bot.commands.set(commandName, commandFile);
             console.log(`DiscordJarvis | Command Allocated => ${commandName}`);
