@@ -12,7 +12,8 @@ So you'll have to do some research to figure out specific stuff yourself, but th
 
 This repository is dependant on these node modules:
 
-[x] - Discord.js (v12)
+- Discord.js (v12)
+https://www.npmjs.com/package/discord.js
 
 ## Installation
 
