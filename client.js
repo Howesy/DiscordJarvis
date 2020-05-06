@@ -15,6 +15,7 @@ bot.aliases = new discord.Collection();
 bot.settings = require(`${settingsDir}settings.js`);
 bot.privateSettings = require(`${settingsDir}privateSettings.js`);
 
+//Assign our various utility modules to various prototype properties attached to our "bot" variable, for easy access.
 bot.embeds = require(`${utilityDir}embedBuilder.js`);
 bot.permissions = require(`${utilityDir}permissionCalculator.js`);
 bot.utilities = require(`${utilityDir}generalUtility.js`);
