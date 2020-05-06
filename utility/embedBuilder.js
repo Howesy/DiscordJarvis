@@ -1,7 +1,8 @@
 //Deconstruct and retrieve the "MessageEmbed" class from the discord.js module so we can create a module for easy creation of embeds.
 const {MessageEmbed} = require("discord.js");
 
-//I'll add comments for one of the functions as they all follow the same construction. They are just sent to different areas.
+//I'll add comments for one of the functions as they all follow the same construction.
+//They are just sent to different areas which I will comment accordingly.
 
 /**
  * Send an embed to the same channel as the passed message object.
