@@ -8,6 +8,8 @@ All code contained within is fully commented so you can understand the inner wor
 Obviously I can't explain everything in-depth otherwise the files would be a million lines long each.
 So you'll have to do some research to figure out specific stuff yourself, but there is documentation and knowledge everywhere.
 
+This frameowrk also comes included with various utility functions and an embed constructor for easy on the fly embeds, making your bot the flashiest in the business.
+
 # Dependencies
 
 This repository is dependant on these node modules:
