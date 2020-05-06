@@ -19,7 +19,7 @@ exports.run = function(bot, msg) {
     //If the channel the message was sent in, isn't a guild text channel, then return.
     if (msg.channel.type != "text")
         return;
-
+    
     //If the start of the message doesn't begin with the designated prefix, then return.
     if (!msg.content.startsWith(bot.settings.prefix))
         return;
@@ -31,7 +31,10 @@ exports.run = function(bot, msg) {
     //Declare our argument variable so we can allow the user to specify arguments in their discord messages.
     const args = msg.content.split(" ").slice(1);
     //Call our permission function specified in our utility module to determine what permission level the user is.
-    const permission = bot.permission(msg);
+    //Deconstruct the necessary properties in order to access the determinePermissionLevel function.
+    const {permissions} = bot;
+    const {determinePermissionLevel} = permissions;
+    const permission = determinePermissionLevel(bot, msg);
 
     //Declare commandModule variable to be assigned our command module depending on which command the user specified
     //and whether or not the specified command exists.
