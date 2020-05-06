@@ -7,16 +7,19 @@ function determinePermissionLevel(bot, message) {
     //We'll use these permissions to determine whether or not a user is a staff member.
     const permissionMask = 0x2 | 0x8;
     //There are cases where the "member" property of a message can be null. "<Message>.member?", so in that case assign them a permission level of 0.
-    if (msg.member == null || msg.member == undefined) 
+    if (message.member == null || message.member == undefined) 
         permissionLevel = 0;
     //These users will have access to the more simpler harmless commands.
     //In simple terms, if our members highestRole contains the permissions "KICK_MEMBERS" or "ADMINISTRATOR" assign them a permission level of 1.
     //These users will have access to the higher permission requirement commands such as "ban, kick" and whatever else you determine staff suitable.
-    if (message.member.highestRole.permissions & permissionMask)
+    const {utilities} = bot;
+    const {retrieveHighestRole} = utilities;
+    const membersHighestRole = retrieveHighestRole(message.member);
+    if (membersHighestRole.permissions & permissionMask)
         permissionLevel = 1;
     //If our owner array declared in our settings module contains the message author's id, then assign them a permission level of 2.
     //These users will have access to the more dangerous and lucrative commands for the bot.
-    if (bot.settings.owners.includes(message.author.id))
+    if (bot.settings.botOwners.includes(message.author.id))
         permissionLevel = 2;
 
     //Return the determined permission level.
