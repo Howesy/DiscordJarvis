@@ -3,3 +3,6 @@
 
 # Ignore Private Settings
 /settings/privateSettings.js
+
+# Ignore Jarvis Testing Settings
+/settings/settings.js
