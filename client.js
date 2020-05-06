@@ -3,8 +3,8 @@ const fs = require("fs");
 const discord = require("discord.js");
 
 //Declare our directories and deconstruct them into various variables for easy access.
-const botDirectories = ["./events/", "./settings/", "./commands/user/", "./commands/developer/"];
-const [eventsDir, settingsDir, userCommandsDir, developerCommandsDir] = botDirectories;
+const botDirectories = ["./events/", "./settings/", "./utility/", "./commands/user/", "./commands/developer/"];
+const [eventsDir, settingsDir, utilityDir, userCommandsDir, developerCommandsDir] = botDirectories;
 
 //Declare our "bot" (Client) variable and assign it prototype properties so we can easily store and access various imporant collections.
 const bot = new discord.Client();
@@ -14,6 +14,10 @@ bot.aliases = new discord.Collection();
 //Assign our JSON settings file to a property prototype on the "bot" variable, so we can easily access our settings on the go.
 bot.settings = require(`${settingsDir}settings.js`);
 bot.privateSettings = require(`${settingsDir}privateSettings.js`);
+
+bot.embeds = require(`${utilityDir}embedBuilder.js`);
+bot.permissions = require(`${utilityDir}permissionCalculator.js`);
+bot.utilities = require(`${utilityDir}generalUtility.js`);
 
 //Deconstruct our private settings object and retrieve the token property because that's all we need.
 const {token} = bot.privateSettings;
