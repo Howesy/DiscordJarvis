@@ -91,19 +91,27 @@ exports.configuration = {
     permissionLevel: 1
 }
 
+//Filter all our "bot.commands" by a specific category and return the <Collection> of commands.
 function fetchCommands(bot, category) {
     return bot.commands.filter(commands => commands.info.category == category);
 }
 
+//Declare function "buildCommandName" to perform actions in order to gurantee the structural integrity of our embed when processing various commands.
 function buildCommandName(bot, command) {
+    //Deconstruct our "name" and "commandPrefix" variables from our "command.info" and "bot.settings" objects.
     const {name} = command.info;
     const {commandPrefix} = bot.settings;
+    //Build array from the keys of bot.commands, essentially we retrieve each name of our commands and store them in an array.
     const commandNames = Array.from(bot.commands.keys());
+    //Take all commands names and find the largest string length and store it in our "determinedLength" variable.
     const determinedLength = commandNames.reduce((accumulator, commandName) => Math.max(accumulator, commandName.length), 0);
-    const calculatedWhiteSpace = calcEmbedSpace(determinedLength, name);
+    //Calculate the required amount of whitespace in our embed by calling our "calcEmbedSpace" function and apssing it our determined length.
+    const calculatedWhiteSpace = calcEmbedSpace(determinedLength, name.length);
+    //Return our prefix, commandName, and calculated whitespace together.
     return commandPrefix + name + calculatedWhiteSpace;
 }
 
+//Declare function "calcEmbedSpace" to calculate how much whitespace is needed depending on the calculated length and command name length.
 function calcEmbedSpace(calculatedLength, commandNameLength) {
     //Return whitespace depending on the length of our longest command name subtracted by the length of the given command name.
     return " ".repeat(calculatedLength - commandNameLength);
