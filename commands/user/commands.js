@@ -1,3 +1,5 @@
+//A command to display information about a specific command, or display all commands.
+
 //Export function "run" in order to be ran when called.
 exports.run = function(bot, msg, args) {
     //Deconstruct first parameter of our "args" variable and assign it a default value of null.
@@ -58,10 +60,14 @@ exports.run = function(bot, msg, args) {
         }
 
     } else {
+        //Declare array and destructure for easier command display management and understanding.
+        const commandCategories = ["user", "owner"];
+        const [user, owner] = commandCategories;
+
         //Map out all user commands fetched by using the "fetchCommands" function and store them in a variable "userCommands" for display in our embed later.
-        const userCommands = `\`\`\`asciidoc\n${fetchCommands(bot, "user").map(command => `${buildCommandName(bot, command)} :: ${command.info.description}`).join('\n')}\`\`\``;
+        const userCommands = `\`\`\`asciidoc\n${fetchCommands(bot, user).map(command => `${buildCommandName(bot, command)} :: ${command.info.description}`).join('\n')}\`\`\``;
         //Map out all developer commands fetched by using the "fetchCommands" function and store them in a variable "developerCommands" for display in our embed later.
-        const developerCommands = `\`\`\`asciidoc\n${fetchCommands(bot, "developer").map(command => `${buildCommandName(bot, command)} :: ${command.info.description}`).join('\n')}\`\`\``;
+        const developerCommands = `\`\`\`asciidoc\n${fetchCommands(bot, owner).map(command => `${buildCommandName(bot, command)} :: ${command.info.description}`).join('\n')}\`\`\``;
 
         //Construct an object called: "embedOptions", and store specifications for the construction of our embed.
         const embedOptions = {
