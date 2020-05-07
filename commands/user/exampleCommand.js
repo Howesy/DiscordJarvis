@@ -10,7 +10,8 @@ exports.run = function(bot, msg, args) {
 exports.info = {
     name: "exampleCommand",
     description: "This is an amazing command!",
-    usage: "exampleCommand RandomArgument 1259"
+    usage: "exampleCommand RandomArgument 1259",
+    category: "user"
 }
 
 //Export configuration object so we can alter various prospects of the command such as what permission level is required to use
