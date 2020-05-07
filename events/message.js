@@ -20,14 +20,17 @@ exports.run = function(bot, msg) {
     if (msg.channel.type != "text")
         return;
     
+    //Deconstructed settings object and retrieved our prefix for later use in our code.
+    const {commandPrefix} = bot.settings;
+
     //If the start of the message doesn't begin with the designated prefix, then return.
-    if (!msg.content.startsWith(bot.settings.prefix))
+    if (!msg.content.startsWith(commandPrefix))
         return;
 
     //Deconstruct the recieved message by splitting and retrieving the first element which would be the designated command.
     let [command] = msg.content.toLowerCase().split(" ");
     //Re-assign the value of command to itself while trimming the prefix so we can use it later to retrieve our command module.
-    command = command.slice(bot.settings.prefix.length);
+    command = command.slice(commandPrefix.length);
     //Declare our argument variable so we can allow the user to specify arguments in their discord messages.
     const args = msg.content.split(" ").slice(1);
     //Call our permission function specified in our utility module to determine what permission level the user is.
@@ -48,14 +51,17 @@ exports.run = function(bot, msg) {
     else if (bot.aliases.has(command))
         commandModule = bot.commands.get(bot.aliases.get(command));
 
+    //Deconstructed our configuration object for checks later in our code.
+    const {activated, permissionLevel} = commandModule.configuration;
+
     //Reading from a configuration object specified within each of our commands, check if we want the command to be used.
     //If we specify a "false" value for this attribute, return and send a message to the channel the command was used in.
-    if (!commandModule.configuration.activated)
+    if (!activated)
         return msg.channel.send("You're unable to access this command as it has been disabled by the developer.");   
 
     //Reading from a configuration object specified withine ach of our commands, check if the user has an appropriate level
     //of permission in order to use the command and if they don't send a message to the channel the command was used in.
-    if (permission < commandModule.configuration.permissionLevel)
+    if (permission < permissionLevel)
         return msg.channel.send("You're unabel to access this command as your permission is too low.");
 
     //Call our run function on the specified command module to pass each of these specific objects for use in the command.
