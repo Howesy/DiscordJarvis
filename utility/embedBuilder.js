@@ -15,7 +15,7 @@ function basicEmbed(message, embedOptions) {
     //Deconstruct our user specified embedOptions object for our embed properties such as colour and title.
     const {colour, title, description, footer} = embedOptions;
     //Deconstruct our message author and retrieve their tag and avatarURL to be used in the author of the embed.
-    const {tag, avatarURL} = message.author;
+    const {tag} = message.author;
     //Construct a new "MessageEmbed" class.
     const constructedEmbed = new MessageEmbed()
     //Set colour of the embed to our user specified embed colour.
@@ -29,7 +29,7 @@ function basicEmbed(message, embedOptions) {
     //Set timestamp of the embed to a initialize date class and it'll automatically retrieve properties to display the current date and time.
     .setTimestamp(new Date())
     //Set author of the embed to our previously deconstructed properties retrieved from our "message.author" object. (<User>)
-    .setAuthor(tag, avatarURL);
+    .setAuthor(tag, message.author.avatarURL());
     //Send embed to the channel of the passed message.
     message.channel.send(constructedEmbed);
 }
@@ -43,14 +43,14 @@ function basicEmbed(message, embedOptions) {
 //Declare a function called: "channelEmbed" used for sending embeds to specific channels specified by a channel ID.
 function channelEmbed(message, embedOptions) {
     const {colour, title, description, footer, channelID} = embedOptions;
-    const {tag, avatarURL} = message.author;
+    const {tag} = message.author;
     const constructedEmbed = new MessageEmbed()
     .setColor(colour)
     .setTitle(title)
     .setDescription(description)
     .setFooter(footer)
     .setTimestamp(new Date())
-    .setAuthor(tag, avatarURL);
+    .setAuthor(tag, message.author.avatarURL());
     //Fetch specified channel within the guild and send the embed to that specified channel.
     message.guild.channels.cache.get(channelID).send(constructedEmbed);
 }
@@ -64,14 +64,14 @@ function channelEmbed(message, embedOptions) {
 //Declare a function called: "userEmbed" used for sending embeds to specific users specified by a user ID.
 function userEmbed(bot, embedOptions) {
     const {colour, title, description, footer, userID} = embedOptions;
-    const {tag, avatarURL} = bot.user;
+    const {tag} = bot.user;
     const constructedEmbed = new MessageEmbed()
     .setColor(colour)
     .setTitle(title)
     .setDescription(description)
     .setFooter(footer)
     .setTimestamp(new Date())
-    .setAuthor(tag, avatarURL);
+    .setAuthor(tag, bot.user.avatarURL());
     //Fetch specifeid user from the bots cached users and send the embed to that specified user.
     bot.users.cache.get(userID).send(constructedEmbed);
 }
