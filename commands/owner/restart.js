@@ -33,5 +33,5 @@ exports.info = {
 exports.configuration = {
     activated: true,
     aliases: [],
-    permissionLevel: 1
+    permissionLevel: 2
 }
