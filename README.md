@@ -40,7 +40,7 @@ As you can see there is a significant lack of commands included in the repositor
 ## Future Plans
 
 - Potentially implement an eval command that executes in it's own sandboxed environment to protect from malicious intentions.
-- Add a plethora of various commannds to the repository to inspire and give developers the boost they may need for their bots.
+- Add a plethora of various commands to the repository to inspire and give developers the boost they may need for their bots.
 
 ## Commands Example
 
