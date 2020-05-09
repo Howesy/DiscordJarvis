@@ -34,6 +34,15 @@ Once you've extracted all the files to your chosen directory, follow this list o
 
 If you want an example of how to perform these actions, direct your attention to the (Installation Tutorial) section.
 
+## Extra Information
+
+As you can see there is a significant lack of commands included in the repository. This is because I leave the command making to you developers. I've given you the engine to drive the amibition, you've just got to give it the throttle to get it going. However, I will more than likely be leaving example commands in this repository in another branch or perhaps directly integrated into this "master" branch.
+
+## Future Plans
+
+- Potentially implement an eval command that executes in it's own sandboxed environment to protect from malicious intentions.
+- Add a plethora of various commannds to the repository to inspire and give developers the boost they may need for their bots.
+
 ## Commands Example
 
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/PDtNPQK/Discord-e-ZHt5-G2-G7-R.png" alt="Discord-e-ZHt5-G2-G7-R" border="0" /><a>
