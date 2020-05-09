@@ -36,11 +36,9 @@ If you want an example of how to perform these actions, direct your attention to
 
 ## Commands Example
 
-<img src="https://ibb.co/vXDHTYp"
-     alt="Command Information"/>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/PDtNPQK/Discord-e-ZHt5-G2-G7-R.png" alt="Discord-e-ZHt5-G2-G7-R" border="0" /><a>
 
-<img src="https://ibb.co/SVyVD0j"
-     alt="Display Commands"/>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/ygPgm59/Discord-t9h333bh-SU.png" alt="Discord-t9h333bh-SU" border="0" /></a>
 
 ## Contributing
 
