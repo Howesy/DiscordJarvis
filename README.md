@@ -36,10 +36,10 @@ If you want an example of how to perform these actions, direct your attention to
 
 ## Commands Example
 
-<img src="https://ibb.co/vXDHTYp.png"
+<img src="https://ibb.co/vXDHTYp"
      alt="Command Information"/>
 
-<img src="https://ibb.co/SVyVD0j.png"
+<img src="https://ibb.co/SVyVD0j"
      alt="Display Commands"/>
 
 ## Contributing
