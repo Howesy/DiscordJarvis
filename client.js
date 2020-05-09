@@ -32,11 +32,16 @@ fs.readdir(eventsDir, function(error, events) {
     //Log to the console that we're beginning the loading and initialization of discord events.
     console.log("[Discord Jarvis] Beginning loading and initialization of discord events!");
     events.forEach(function(event) {
+        //If the file doesn't have a ".js" extension at the end of it, ignore it.
         if (!event.endsWith(".js"))
             return;
+        //Require the event module.
         const eventModule = require(eventsDir + event);
+        //Destructure the split event name, and retrieve the first index which in this case would be the name.
         const [eventName] = event.split(".");
+        //Log to console that the bot has loaded an event.
         console.log(`DiscordJarvis | Event Allocated => ${eventName}`);
+        //Tell the bot to listen to the specific event while running all of our specific constructs.
         bot.on(eventName, (...constructs) => eventModule.run(bot, ...constructs));
     });
     //Log how long it took to load all our events for statistical purposes, and to look cool.
@@ -63,16 +68,25 @@ We also assign aliases to command names so people can use aliases for easier acc
  */
 
 function ReadCommands(commandDirectory) {
+    //Read command directory and loop through each file.
     fs.readdir(commandDirectory, function(error, commands) {
         if (error) throw new Error(error);
         commands.forEach(function(command) {
+            //If the read file doesn't end with the ".js" extension, ignore it.
             if (!command.endsWith(".js")) 
                 return;
+            //Require the module.
             const commandFile = require(commandDirectory + command);
-            const commandName = commandFile.info.name;
+            //Retrieve the name from the modules info object by destructuring.
+            const {name} = commandFile.info;
+            //Set the module to the command name in the Collection.
             bot.commands.set(commandName, commandFile);
+            //Log to console that a command has been allocated to the collection.
             console.log(`DiscordJarvis | Command Allocated => ${commandName}`);
-            commandFile.configuration.aliases.forEach(alias => bot.aliases.set(alias, commandName));
+            //Destructure the configuration object from the command module and retrieve the "aliases" variable.
+            const {aliases} = commandFile.configuration;
+            //Loop through all aliases and set the aliases, equal to the command name that their dedicated to.
+            aliases.forEach(alias => bot.aliases.set(alias, commandName));
         });
     });
 }
