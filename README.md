@@ -36,8 +36,11 @@ If you want an example of how to perform these actions, direct your attention to
 
 ## Commands Example
 
-![Command Information](https://ibb.co/vXDHTYp.png)
-![Display Commands](https://ibb.co/SVyVD0j.png)
+<img src="https://ibb.co/vXDHTYp.png"
+     alt="Command Information"/>
+
+<img src="https://ibb.co/SVyVD0j.png"
+     alt="Display Commands"/>
 
 ## Contributing
 
