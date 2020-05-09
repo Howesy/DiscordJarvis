@@ -2,6 +2,8 @@
 
 Discord Jarvis was developed on the latest version of Discord.JS at the time: (V12)
 
+Download Latest Release: [Download](https://github.com/Howesy/DiscordJarvis/releases)
+
 Discord Jarvis is a easy deployable framework for a discord bot, taking advantage of modularly structured commands and events for organisation and cleanliness. Taking inspiration from the fictional artifical super-intelligence "Jarvis", this structure allows you to perform advanced functions while remaining simplistic for users to command.
 
 All code contained within is fully commented so you can understand the inner workings of everything that is occuring.
