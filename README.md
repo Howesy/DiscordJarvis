@@ -17,9 +17,6 @@ This repository is dependant on these node modules:
 - Discord.js (v12)
 https://www.npmjs.com/package/discord.js
 
-- vm2 (v3.9.2)
-https://www.npmjs.com/package/vm2#nodevm
-
 ## Installation
 
 Installing this project is simple, all you need to do is download this project as ZIP and extract the file and folders to any directory you'd like.
