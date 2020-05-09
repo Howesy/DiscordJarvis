@@ -3,8 +3,8 @@ const fs = require("fs");
 const discord = require("discord.js");
 
 //Declare our directories and deconstruct them into various variables for easy access.
-const botDirectories = ["./events/", "./settings/", "./utility/", "./commands/user/", "./commands/developer/"];
-const [eventsDir, settingsDir, utilityDir, userCommandsDir, developerCommandsDir] = botDirectories;
+const botDirectories = ["./events/", "./settings/", "./utility/", "./commands/user/", "./commands/owner/"];
+const [eventsDir, settingsDir, utilityDir, userCommandsDir, ownerCommandsDir] = botDirectories;
 
 //Declare our "bot" (Client) variable and assign it prototype properties so we can easily store and access various imporant collections.
 const bot = new discord.Client();
@@ -53,7 +53,7 @@ fs.readdir(eventsDir, function(error, events) {
 //Log to console that we're beginning the loading and initialization of discord commands.
 console.log("[Discord Jarvis] Beginning loading and initialization of discord commands!");
 ReadCommands(userCommandsDir);
-ReadCommands(developerCommandsDir);
+ReadCommands(ownerCommandsDir);
 
 /*
 Decleration of our "ReadCommands" function, like when we read our events, this function stores the command names and required files
@@ -80,13 +80,13 @@ function ReadCommands(commandDirectory) {
             //Retrieve the name from the modules info object by destructuring.
             const {name} = commandFile.info;
             //Set the module to the command name in the Collection.
-            bot.commands.set(commandName, commandFile);
+            bot.commands.set(name, commandFile);
             //Log to console that a command has been allocated to the collection.
-            console.log(`DiscordJarvis | Command Allocated => ${commandName}`);
+            console.log(`DiscordJarvis | Command Allocated => ${name}`);
             //Destructure the configuration object from the command module and retrieve the "aliases" variable.
             const {aliases} = commandFile.configuration;
             //Loop through all aliases and set the aliases, equal to the command name that their dedicated to.
-            aliases.forEach(alias => bot.aliases.set(alias, commandName));
+            aliases.forEach(alias => bot.aliases.set(alias, name));
         });
     });
 }
