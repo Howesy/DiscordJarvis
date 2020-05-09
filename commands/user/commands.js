@@ -36,10 +36,10 @@ exports.run = function(bot, msg, args) {
                 colour: 0x002395,
                 title: "I have retrieved information on that command:",
                 description: `• Name: \`${name}\` 
-                \n• Description: \`${description}\` 
-                \n• Usage: \`${commandPrefix}${usage}\` 
-                \n• Aliases: \`${commandAliases}\` 
-                \n• Permission Level: \`${commandPermissionLevel}\``,
+                • Description: \`${description}\` 
+                • Usage: \`${commandPrefix}${usage}\` 
+                • Aliases: \`${commandAliases}\` 
+                • Permission Level: \`${commandPermissionLevel}\``,
                 footer: `${username} successfully retrieved your command!`
             }
 
