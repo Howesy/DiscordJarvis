@@ -34,11 +34,6 @@ Once you've extracted all the files to your chosen directory, follow this list o
 
 If you want an example of how to perform these actions, direct your attention to the (Installation Tutorial) section.
 
-# Installation Tutorial
-
-- -> Insert video/gif for installing node modules.
-- -> Insert video/gif for retrieving your discord bot's token.s
-
 ## Contributing
 
 At the moment I have no intentions on allowing for direction contribution. But I more then welcome the fact of commiting issues to the repository to potentially suggest features and fix any current ones that are malfunctioning.
