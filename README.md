@@ -34,8 +34,6 @@ Once you've extracted all the files to your chosen directory, follow this list o
 - Determine your specific bot prefix and place it inside your "settings.js" file in the designated position.
 - Then simply run your bot by opening a terminal/console in the directory and run `node client.js`
 
-If you want an example of how to perform these actions, direct your attention to the (Installation Tutorial) section.
-
 ## Extra Information
 
 As you can see there is a significant lack of commands included in the repository. This is because I leave the command making to you developers. I've given you the engine to drive the amibition, you've just got to give it the throttle to get it going. However, I will more than likely be leaving example commands in this repository in another branch or perhaps directly integrated into this "master" branch.
