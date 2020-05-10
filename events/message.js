@@ -36,7 +36,7 @@ exports.run = function(bot, msg) {
         return msg.channel.send("You're unable to access this command as it has been disabled by the developer.");   
 
     if (permission < permissionLevel)
-        return msg.channel.send("You're unabel to access this command as your permission is too low.");
+        return msg.channel.send("You're unable to access this command as your permission is too low.");
 
     commandModule.run(bot, msg, args, permission);
 }
