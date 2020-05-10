@@ -12,7 +12,7 @@ So you'll have to do some research to figure out specific stuff yourself, but th
 
 NOTE: I will be making a seperate branch where all files are left undocumented if that is what you desire.
 
-This frameowrk also comes included with various utility functions and an embed constructor for easy on the fly embeds, making your bot the flashiest in the business.
+This framework also comes included with various utility functions and an embed constructor for easy on the fly embeds, making your bot the flashiest in the business.
 
 # Dependencies
 
