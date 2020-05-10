@@ -32,6 +32,7 @@ Once you've extracted all the files to your chosen directory, follow this list o
 - Retrieve your Discord bot's token and place it inside the "privateSettings.js" file in the designated position.
 - Retrieve the ID's of the bot owners you desire and place them inside your "settings.js" file in the designated position.
 - Determine your specific bot prefix and place it inside your "settings.js" file in the designated position.
+- Then simply run your bot by opening a terminal/console in the directory and run `node client.js`
 
 If you want an example of how to perform these actions, direct your attention to the (Installation Tutorial) section.
 
