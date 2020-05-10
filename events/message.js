@@ -62,7 +62,7 @@ exports.run = function(bot, msg) {
     //Reading from a configuration object specified withine ach of our commands, check if the user has an appropriate level
     //of permission in order to use the command and if they don't send a message to the channel the command was used in.
     if (permission < permissionLevel)
-        return msg.channel.send("You're unabel to access this command as your permission is too low.");
+        return msg.channel.send("You're unable to access this command as your permission is too low.");
 
     //Call our run function on the specified command module to pass each of these specific objects for use in the command.
     commandModule.run(bot, msg, args, permission);
