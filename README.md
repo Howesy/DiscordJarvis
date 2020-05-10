@@ -14,7 +14,7 @@ NOTE: I will be making a seperate branch where all code is left undocumented if 
 
 This framework also comes included with various utility functions and an embed constructor for easy on the fly embeds, making your bot the flashiest in the business.
 
-Discord Jarvis is essentially my magnum opus of Discord bot framework.
+Discord Jarvis is essentially my magnum opus of Discord bot frameworks.
 
 # Dependencies
 
