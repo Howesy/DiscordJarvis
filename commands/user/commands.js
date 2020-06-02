@@ -64,10 +64,11 @@ exports.run = function(bot, msg, args) {
         const commandCategories = ["user", "owner"];
         const [user, owner] = commandCategories;
 
+        const {description} = command.info;
         //Map out all user commands fetched by using the "fetchCommands" function and store them in a variable "userCommands" for display in our embed later.
-        const userCommands = `\`\`\`asciidoc\n${fetchCommands(bot, user).map(command => `${buildCommandName(bot, command)} :: ${command.info.description}`).join('\n')}\`\`\``;
+        const userCommands = `\`\`\`asciidoc\n${fetchCommands(bot, user).map(command => `${buildCommandName(bot, command)} :: ${description}`).join('\n')}\`\`\``;
         //Map out all developer commands fetched by using the "fetchCommands" function and store them in a variable "developerCommands" for display in our embed later.
-        const developerCommands = `\`\`\`asciidoc\n${fetchCommands(bot, owner).map(command => `${buildCommandName(bot, command)} :: ${command.info.description}`).join('\n')}\`\`\``;
+        const developerCommands = `\`\`\`asciidoc\n${fetchCommands(bot, owner).map(command => `${buildCommandName(bot, command)} :: ${description}`).join('\n')}\`\`\``;
 
         //Construct an object called: "embedOptions", and store specifications for the construction of our embed.
         const embedOptions = {
@@ -98,8 +99,9 @@ exports.configuration = {
 }
 
 //Filter all our "bot.commands" by a specific category and return the <Collection> of commands.
-function fetchCommands(bot, category) {
-    return bot.commands.filter(commands => commands.info.category == category);
+function fetchCommands(bot, specifiedCategory) {
+    const {category} = commands.info;
+    return bot.commands.filter(commands => category == specifiedCategory);
 }
 
 //Declare function "buildCommandName" to perform actions in order to gurantee the structural integrity of our embed when processing various commands.
