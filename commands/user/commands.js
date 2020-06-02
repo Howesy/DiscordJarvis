@@ -42,8 +42,9 @@ exports.run = function(bot, msg, args) {
         const commandCategories = ["user", "owner"];
         const [user, owner] = commandCategories;
 
-        const userCommands = `\`\`\`asciidoc\n${fetchCommands(bot, user).map(command => `${buildCommandName(bot, command)} :: ${command.info.description}`).join('\n')}\`\`\``;
-        const developerCommands = `\`\`\`asciidoc\n${fetchCommands(bot, owner).map(command => `${buildCommandName(bot, command)} :: ${command.info.description}`).join('\n')}\`\`\``;
+        const {description} = command.info;
+        const userCommands = `\`\`\`asciidoc\n${fetchCommands(bot, user).map(command => `${buildCommandName(bot, command)} :: ${description}`).join('\n')}\`\`\``;
+        const developerCommands = `\`\`\`asciidoc\n${fetchCommands(bot, owner).map(command => `${buildCommandName(bot, command)} :: ${description}`).join('\n')}\`\`\``;
 
         const embedOptions = {
             colour: 0x002395,
@@ -69,8 +70,9 @@ exports.configuration = {
     permissionLevel: 1
 }
 
-function fetchCommands(bot, category) {
-    return bot.commands.filter(commands => commands.info.category == category);
+function fetchCommands(bot, specifiedCategory) {
+    const {category} = commands.info;
+    return bot.commands.filter(commands => category == specifiedCategory);
 }
 
 function buildCommandName(bot, command) {
